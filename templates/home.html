@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>FWI Prediction</h1>
+    <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <label for="Temprature">Temprature:</label>
+        <input type="text" id="Temprature" name="Temprature" placeholder="Temprature" required = "required">
+
+        <label for="RH">RH </label>
+        <input type="text" id="RH" name="RH" placeholder="RH" required = "required">
+
+        <label for="Ws">Ws </label>
+        <input type="text" id="Ws" name="Ws" placeholder="Ws" required = "required">
+
+        <label for="Rain">Rain </label>
+        <input type="text" id="Rain" name="Rain" placeholder="Rain" required = "required">
+
+        <label for="FFMC">FFMC </label>
+        <input type="text" id="FFMC" name="FFMC" placeholder="FFMC" required = "required">
+
+        <label for="DMC">DMC </label>
+        <input type="text" id="DMC" name="DMC" placeholder="DMC" required = "required">
+
+        <label for="ISI">ISI </label>
+        <input type="text" id="ISI" name="ISI"  placeholder="ISI" required = "required">
+
+        <label for="Classes">Classes </label>
+        <input type="text" id="Classes" name="Classes" placeholder="Classes" required = "required">
+
+        <label for="Region">Region </label>
+        <input type="text" id="Region" name="Region" placeholder="Region" required = "required">
+
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large"> Predict </button>
+    </form>
+</body>
+
+<h2>
+    The FWI Prediction is {{results}}
+</h2>
+</html>
